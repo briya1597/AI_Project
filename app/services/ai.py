@@ -42,14 +42,17 @@ def generate_ai_response(user_message: str) -> str:
             print("✅ Gemini handled the request.")
             return response.text
     except Exception as e:
-        error_msg = f"⚠️ Gemini provider failed (import or gen): {e}\n{traceback.format_exc()}"
-        print(error_msg)
+        error_msg = f"⚠️ Gemini provider failed: {str(e)}"
+        print(f"{error_msg}\n{traceback.format_exc()}")
         # Note: Avoid writing to local files on Vercel (read-only filesystem)
 
     # --- Try Groq (Fallback) ---
     try:
         from groq import Groq
         print("💡 Attempting Groq fallback...")
+        if not GROQ_API_KEY:
+            raise ValueError("GROQ_API_KEY is not set.")
+            
         client = Groq(api_key=GROQ_API_KEY)
         chat_completion = client.chat.completions.create(
             messages=[
@@ -61,6 +64,6 @@ def generate_ai_response(user_message: str) -> str:
         print("✅ Groq handled the request.")
         return chat_completion.choices[0].message.content
     except Exception as e:
-        error_msg = f"❌ Groq also failed: {e}\n{traceback.format_exc()}"
-        print(error_msg)
+        error_msg = f"❌ Groq also failed: {str(e)}"
+        print(f"{error_msg}\n{traceback.format_exc()}")
         return f"⚠ AI Service Error: {str(e)}"
