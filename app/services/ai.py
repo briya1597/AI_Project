@@ -1,9 +1,11 @@
 import os
 import traceback
-from dotenv import load_dotenv
-
-# Load environment variables
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # dotenv is only required for local development
+    pass
 
 # Provider API Keys
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
