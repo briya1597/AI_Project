@@ -1,0 +1,8 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+ai_error_log.txt
+server_log.txt
+verify_ai.py
+test_env.py

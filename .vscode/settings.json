@@ -1,0 +1,12 @@
+{
+    "python.analysis.extraPaths": [
+        "./",
+        "./app"
+    ],
+    "python.autoComplete.extraPaths": [
+        "./",
+        "./app"
+    ],
+    "python.analysis.typeCheckingMode": "basic",
+    "python.defaultInterpreterPath": ".\\.venv\\Scripts\\python.exe"
+}

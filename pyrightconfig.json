@@ -1,0 +1,12 @@
+{
+    "venvPath": "c:\\Users\\briya\\Desktop\\Repo\\AI_Project",
+    "venv": ".venv",
+    "executionEnvironments": [
+        {
+            "root": ".",
+            "extraPaths": [
+                "./app"
+            ]
+        }
+    ]
+}

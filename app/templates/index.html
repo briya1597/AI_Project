@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrackTech - AI Technology Explorer</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <div class="app-container">
+    <div class="header">
+      <h1>TrackTech AI</h1>
+      <p>Delivering the Edge in Global Technological Innovations</p>
+    </div>
+    
+    <div class="chat-window" id="chatWindow">
+      <div class="message-wrapper bot">
+        <div class="avatar">🤖</div>
+        <div class="message-bubble">
+          <p>Hi there! I'm TrackTech, your AI guide to the forefront of global technological innovation. Ask me about the latest in AI, space exploration, robotics, quantum computing, or biotech!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-area">
+      <div class="input-wrapper">
+        <input type="text" id="userInput" placeholder="Ask about recent tech breakthroughs..." autocomplete="off"/>
+        <button id="sendBtn" aria-label="Send Message">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JS -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
