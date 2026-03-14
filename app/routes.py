@@ -7,6 +7,10 @@ main_bp = Blueprint('main', __name__)
 def home():
     return render_template("index.html")
 
+@main_bp.route("/health", methods=["GET"])
+def health():
+    return jsonify({"status": "ok", "message": "Server is running."})
+
 @main_bp.route("/chat", methods=["POST"])
 def chat():
     data = request.json

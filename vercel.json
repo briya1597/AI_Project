@@ -1,12 +1,14 @@
 {
-  "version": 2,
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "index.py"
+      "src": "index.py",
+      "use": "@vercel/python"
     }
   ],
-  "env": {
-    "PYTHON_VERSION": "3.12"
-  }
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.py"
+    }
+  ]
 }

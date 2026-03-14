@@ -42,8 +42,7 @@ def generate_ai_response(user_message: str) -> str:
     except Exception as e:
         error_msg = f"⚠️ Gemini provider failed (import or gen): {e}\n{traceback.format_exc()}"
         print(error_msg)
-        with open("ai_error_log.txt", "a", encoding="utf-8") as f:
-            f.write("\n--- GEMINI ERROR ---\n" + error_msg + "\n")
+        # Note: Avoid writing to local files on Vercel (read-only filesystem)
 
     # --- Try Groq (Fallback) ---
     try:
